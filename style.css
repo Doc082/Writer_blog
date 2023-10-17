@@ -1,0 +1,109 @@
+/*
+Theme Name: Writer Blog
+Theme URI: https://mysite/
+Author: Mirko Fenu
+Author URI: https://Mysite/
+Description: Blog of Writer
+Version: 1.0
+Text Domain: writer_blog
+*/
+
+.container {
+    max-width: 960px;
+  }
+  
+  .img_right {
+    background-image: url("images/avatar.jpg");
+    background-size: 300px;
+    background-color: #ccc; /* Used if the image is unavailable */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    position: absolute;
+    right: 10%;
+    bottom: 20%;
+    width: 300px;
+    height: 300px;
+    background-color: #333;
+    border-radius: 21px;
+    transform: rotate(10deg);
+  }
+
+  .img_middle_l {
+    background-image: url("images/img_left.jpg");
+    background-size: 300px;
+    background-color: #ccc; /* Used if the image is unavailable */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    position: absolute;
+    right: 10%;
+    bottom: 15%;
+    width: 300px;
+    height: 300px;
+    background-color: #333;
+    border-radius: 21px;
+    transform: rotate(10deg);
+  }
+
+  .img_middle_r {
+    background-image: url("images/img_right.jpg");
+    background-size: 300px;
+    background-color: #ccc; /* Used if the image is unavailable */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    position: absolute;
+    right: 70%;
+    bottom: 15%;
+    width: 300px;
+    height: 300px;
+    background-color: #333;
+    border-radius: 21px;
+    transform: rotate(-10deg);
+  }
+
+  .img_thumb{
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  #spark, #middle, #footer, #navbar{
+    background-image: url("images/backg15.png");
+    background-attachment: fixed;
+    background-color: #e5bde4;
+    z-index: 0;
+  }
+
+  .diagonal{
+    position: relative;
+    background-color: white;
+    height: 100px;
+    transform: skewY(1deg) translateY(-40px);
+    z-index: 2;
+  }
+
+  .diagotwo{
+    position: relative;
+    background-color: white;
+    height: 100px;
+    transform: skewY(-1deg) translateY(40px);
+    z-index: 2;
+  }
+
+  .card_height{
+    height: 100%;
+  }
+
+  .social{
+    height: 50px;
+    width: auto;
+  }
+  
+  /*
+   * Extra utilities
+   */
+  
+  .flex-equal > * {
+    flex: 1;
+  }
+  @media (min-width: 768px) {
+    .flex-md-equal > * {
+      flex: 1;
+    }
+  }
