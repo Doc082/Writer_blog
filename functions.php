@@ -2,12 +2,17 @@
 
 use function FakerPress\register;
 
+//supporto al tema
+add_theme_support('menus');
+add_theme_support('post-thumbnails');
+add_theme_support('title-tag'); //titolo sito dinamico
+
     require_once('bs4navwalker.php');
     add_theme_support('menus');
 
     function writer_style(){
         wp_enqueue_style('writ_animate', '//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
-        wp_enqueue_style('writ_font', '//fonts.googleapis.com/css?family=Asap|Raleway:400,700');
+        wp_enqueue_style('writ_font', '//fonts.googleapis.com/css?family=Asap|Raleway:400,700&family=Shantell+Sans:wght@500');
         wp_enqueue_style('writ_style', get_stylesheet_uri(), NULL, microtime());
         wp_enqueue_style('writ_bs', '//cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css');
     }

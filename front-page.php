@@ -19,33 +19,48 @@
   </div>
   <div class="diagonal"></div>
   <!-- Nuove Uscite-->
-  <a name="nuove_uscite"></a>
     <div id="books" class="position-relative overflow-hidden p-3 m-md-2">
+        <?php
+            $evidenceBook = new WP_Query(array(
+                'posts_per_page' => 3,
+                'category_type' => 'in_evidenza'
+            ));
+            $count = 0;
+            while($evidenceBook->have_posts()){
+                $evidenceBook->the_post();
+                if($count) echo "<hr class='hr'/>";
+        ?>
         <div class="row p-3 m-3">
-          <div class="col-md-4 col-sm-12"><img class="img_thumb shadow" src="<?php echo get_theme_file_uri('images/thumb001.jpg');?>" alt="" /></div>
-          <div class="offset-md-4 col-md-4 col-sm-12">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit neque facilis nemo itaque maxime magni libero
-              quisquam unde beatae asperiores</p>
+            <?php if($count == 1) {?>
+            <div class="offset-md-4 col-md-4 col-sm-12 order-md-2 text-md-start text-center"><img class="img_thumb shadow" src="<?php echo the_post_thumbnail_url()?>" alt="<?php echo the_post_thumbnail_caption()?>" /></div>
+            <div class="col-md-4 col-sm-12 text-md-start text-center">
+              <?php }else{?>
+            <div class="col-md-4 col-sm-12 text-md-start text-center"><img class="img_thumb shadow" src="<?php echo the_post_thumbnail_url()?>" alt="<?php echo the_post_thumbnail_caption()?>" /></div>
+            <div class="offset-md-4 col-md-4 col-sm-12 text-md-start text-center">
+              <?php }?>
+            <p><?php the_excerpt(); ?></p>
             </div>
         </div>
-        <hr class="hr"/>
-        <div class="row p-3 m-3">
-          <div class="col-md-4 col-sm-12">
+        <?php
+                $count++;
+            }
+        ?>
+        <!--<div class="row p-3 m-3">
+            <div class="offset-md-4 col-md-4 col-sm-12 order-md-2 text-md-start text-center"><img class="img_thumb shadow" src="<?php echo get_theme_file_uri('images/thumb002.jpg');?>" alt="" /></div>
+          <div class="col-md-4 col-sm-12 text-md-start text-center">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit neque facilis nemo itaque maxime magni.</p>
           </div>
-          <div class="offset-md-4 col-md-4 col-sm-12"><img class="img_thumb shadow" src="<?php echo get_theme_file_uri('images/thumb002.jpg');?>" alt="" /></div>
         </div>
         <hr class="hr"/>
         <div class="row p-3 m-3">
-          <div class="col-md-4 col-sm-12"><img class="img_thumb shadow" src="<?php echo get_theme_file_uri('images/thumb003.jpg');?>" alt="" /></div>
-          <div class="offset-md-4 col-md-4 col-sm-12">
+          <div class="col-md-4 col-sm-12 text-md-start text-center"><img class="img_thumb shadow" src="<?php echo get_theme_file_uri('images/thumb003.jpg');?>" alt="" /></div>
+          <div class="offset-md-4 col-md-4 col-sm-12 text-md-start text-center">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit neque facilis nemo itaque maxime magni libero.
             </p>
           </div>
-      </div>
+      </div>-->
     </div>
     <!-- Middle Chi Sono -->
-    <a name="chi_sono"></a>
     <div class="diagotwo"></div>
     <div class="container-fluid">
       <div id="middle" class="position-relative overflow-hidden p-3 p-md-5 m-md-2">
@@ -64,39 +79,30 @@
     </div>
     <div class="diagonal"></div>
     <!--Book List-->
-    <a name="i_miei_libri"></a>
     <div class="container-fluid">
       <div class="row p-md-5 m-md-2">
+          <?php
+          $newBooks = new WP_Query(array(
+              'posts_per_page' => 3,
+              'category_type' => 'in_evidenza'
+          ));
+
+          while($newBooks->have_posts()){
+              $newBooks->the_post();
+              ?>
         <div class="col-md-4 col-sm-12 d-flex justify-content-center">
-          <div class="card card_height" style="width: 18rem;">
-            <img class="card-img-top" src="<?php echo get_theme_file_uri('images/img_card001.jpg');?>" alt="Card image cap">
+          <div class="card card_height" style="width: 18rem; margin-bottom: 15px;">
+            <img class="card-img-top" src="<?php the_post_thumbnail_url()?>" alt="<?php the_post_thumbnail_caption(); ?>">
             <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="card-text"><?php the_excerpt();?></p>
               <a href="#" class="btn btn-primary">Aquista Libro</a>
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-12 d-flex justify-content-center">
-          <div class="card card_height" style="width: 18rem;">
-            <img class="card-img-top" src="<?php echo get_theme_file_uri('images/img_card002.jpg');?>" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Aquista Libro</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-12 d-flex justify-content-center">
-          <div class="card card_height" style="width: 18rem;">
-            <img class="card-img-top" src="<?php echo get_theme_file_uri('images/img_card003.jpg');?>" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Aquista Libro</a>
-            </div>
-          </div>
-        </div>
+          <?php } ?>
       </div>
     </div>
-  
+
   <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous"></script>-->

@@ -2,7 +2,7 @@
 <html lang="it">
 
 <head>
-  <title>Majla Fadda</title>
+  <title>Majla Fadda - Writer Blog</title>
   <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link href="style.css" rel="stylesheet">-->
@@ -12,7 +12,7 @@
 <body>
   <div class="container-fluid">
     <header>
-      <h1 class="m-md-3 text-md-start text-center">Tra Linee e Sogni: <small class="text-body-secondary">Il Viaggio Letterario di Majla</small></h1>
+        <h1 class="m-md-3 text-md-start text-center"><b>Tra Linee e Sogni:</b> <small class="text-body-secondary">Il Viaggio Letterario di Majla</small></h1>
       <nav id="navbar" class="navbar navbar-expand-lg m-md-2" style="z-index: 2;">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.html">Home</a>
@@ -32,17 +32,6 @@
                         'fallback_cb' => 'bs4navwalker::fallback'
                     ));
                 ?>
-           <!-- <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" href="#nuove_uscite">Nuove Uscite</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#i_miei_libri">I Miei Libri</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="#chi_sono">Chi Sono</a>
-              </li>
-            </ul>-->
           </div>
         </div>
       </nav>
