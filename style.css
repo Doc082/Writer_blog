@@ -1,8 +1,8 @@
 /*
 Theme Name: Writer Blog
-Theme URI: https://mysite/
+Theme URI: https://majlafaddascrittrice.it/
 Author: Mirko Fenu
-Author URI: https://Mysite/
+Author URI: https://majlafaddascrittrice.it/
 Description: Blog of Writer
 Version: 1.0
 Text Domain: writer_blog
@@ -19,6 +19,9 @@ a{
   font-family: Shantell Sans, sans-serif;
 }
 
+p > span > a{
+  text-decoration: none;
+}
 .container {
     max-width: 960px;
   }
@@ -111,7 +114,27 @@ a{
     height: 50px;
     width: auto;
   }
-  
+
+  /* article style */
+
+  .img-article{
+    width: 60%;
+    height: auto;
+    border-radius: 30px;
+  }
+
+  .txt-article{
+    color: #0000EE;
+  }
+
+  /* Contatti style */
+    .img-contatti{
+        width: 30%;
+        height: auto;
+        border-radius: 30px;
+        box-shadow: 1px 1px 2px purple, 0 0 25px deeppink, 0 0 5px pink;
+    }
+
   /*
    * Extra utilities
    */

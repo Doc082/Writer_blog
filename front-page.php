@@ -32,33 +32,20 @@
         ?>
         <div class="row p-3 m-3">
             <?php if($count == 1) {?>
-            <div class="offset-md-4 col-md-4 col-sm-12 order-md-2 text-md-start text-center"><img class="img_thumb shadow" src="<?php echo the_post_thumbnail_url()?>" alt="<?php echo the_post_thumbnail_caption()?>" /></div>
+            <div class="offset-md-4 col-md-4 col-sm-12 order-md-2 text-md-start text-center"><a href="<?php the_permalink(); ?>"><img class="img_thumb shadow" src="<?php echo the_post_thumbnail_url()?>" alt="<?php echo the_post_thumbnail_caption()?>" /></a></div>
             <div class="col-md-4 col-sm-12 text-md-start text-center">
               <?php }else{?>
-            <div class="col-md-4 col-sm-12 text-md-start text-center"><img class="img_thumb shadow" src="<?php echo the_post_thumbnail_url()?>" alt="<?php echo the_post_thumbnail_caption()?>" /></div>
+                <div class="col-md-4 col-sm-12 text-md-start text-center"><a href="<?php the_permalink(); ?>"><img class="img_thumb shadow" src="<?php echo the_post_thumbnail_url()?>" alt="<?php echo the_post_thumbnail_caption()?>" /></a></div>
             <div class="offset-md-4 col-md-4 col-sm-12 text-md-start text-center">
               <?php }?>
-            <p><?php the_excerpt(); ?></p>
+                <p><?php echo wp_trim_words(get_the_content(), 20); ?><br><span><a href="<?php the_permalink(); ?>"><i class="fa-regular fa-square-caret-right fa-beat" style="color: #0000EE;"></i> <b>Leggi tutto...</b></a></span></p>
             </div>
         </div>
         <?php
                 $count++;
             }
         ?>
-        <!--<div class="row p-3 m-3">
-            <div class="offset-md-4 col-md-4 col-sm-12 order-md-2 text-md-start text-center"><img class="img_thumb shadow" src="<?php echo get_theme_file_uri('images/thumb002.jpg');?>" alt="" /></div>
-          <div class="col-md-4 col-sm-12 text-md-start text-center">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit neque facilis nemo itaque maxime magni.</p>
-          </div>
-        </div>
-        <hr class="hr"/>
-        <div class="row p-3 m-3">
-          <div class="col-md-4 col-sm-12 text-md-start text-center"><img class="img_thumb shadow" src="<?php echo get_theme_file_uri('images/thumb003.jpg');?>" alt="" /></div>
-          <div class="offset-md-4 col-md-4 col-sm-12 text-md-start text-center">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit neque facilis nemo itaque maxime magni libero.
-            </p>
-          </div>
-      </div>-->
+      </div>
     </div>
     <!-- Middle Chi Sono -->
     <div class="diagotwo"></div>
