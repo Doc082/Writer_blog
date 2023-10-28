@@ -75,7 +75,7 @@ class bs4Navwalker extends Walker_Nav_Menu
         $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
 
         // New
-        $class_names .= ' nav-item';
+        $class_names .= ' nav-item mx-3';
         
         if (in_array('menu-item-has-children', $classes)) {
             $class_names .= ' dropdown';
@@ -179,10 +179,10 @@ class bs4Navwalker extends Walker_Nav_Menu
         }
         */
         //
-        $item_output .= '<a'. $attributes .'>';
+        $item_output .= '<a'. $attributes .'><h1>';
         /** This filter is documented in wp-includes/post-template.php */
         $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-        $item_output .= '</a>';
+        $item_output .= '</a></h1>';
         $item_output .= $args->after;
 
         /**

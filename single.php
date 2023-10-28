@@ -10,7 +10,9 @@
         </div>
         <div class="col-md-12">
             <h1 class="txt-article text-center mt-5"><b><?php the_title()?></b></h1>
-                <p><?php the_content(); ?></p>
+            <div class="txt-var">
+                <p class="txt-var"><?php the_content(); ?></p>
+            </div>
         </div>
             <?php } ?>
 
